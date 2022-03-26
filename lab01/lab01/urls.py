@@ -17,6 +17,7 @@ from django import http
 from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
+from django.urls import include, path
 
 def home(request):
     return HttpResponse("Hola Mundo - Miguel Ramos")
@@ -24,5 +25,6 @@ def home(request):
 
 urlpatterns = [
     path('',home),
+    path('polls/', include('encuesta.urls')),
     path('admin/', admin.site.urls),
 ]
